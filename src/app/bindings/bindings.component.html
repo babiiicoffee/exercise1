@@ -1,0 +1,16 @@
+<h1 class="title">Activity 3 : Binding</h1>
+<hr> {{event}}
+<!--INTERPOLATION is the term-->
+<button class="event" on-click="onClick()">Click me!</button>
+<br> <br> <br> {{style}}
+<button class="style btn-primary" [style.background]="isActive ? 'green' : 'light-gray'">style active or
+    not</button>
+<br> <br> <br> {{class}}
+<button class="btn btn-primary" [class.active]="isTrue">class active or not</button>
+
+<br> <br> <br>
+<div>{{property}}<br>
+    <button class="dis" [disabled]="isDisabled">You can't click me</button>
+    <br>
+    <button class="not" [disabled]="!isDisabled">You can click me</button>
+</div>

@@ -1,0 +1,71 @@
+<form [formGroup]="reactive" (ngSubmit)="onSubmit()">
+    <div class="card" style="width: 20rem;margin: 5%;">
+        <div class="card-body">
+            <div class="card-title text-center" style="font-family: monospace ">
+                <h5>Template Driven</h5>
+            </div>
+            <hr>
+            <hr>
+            <!-- First Name -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">First Name : </div>
+                </div>
+                <input class="form-control" type="text" formControlName="firstname">
+            </div>
+            <!-- Last Name -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">Last Name : </div>
+                </div>
+                <input class="form-control" type="text" formControlName="lastname">
+            </div>
+            <!-- Email -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">Email : </div>
+                </div>
+                <input class="form-control" type="email" name="email" email="true" formControlName="email">
+            </div>
+
+            <!-- Address -->
+            <h5 style="font-family: monospace ">Address : </h5>
+
+            <!-- Street -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">Street : </div>
+                </div>
+                <input class="form-control" type="text" formControlName="street">
+            </div>
+
+            <!-- City -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">City : </div>
+                </div>
+                <input class="form-control" type="text" formControlName="city">
+            </div>
+
+            <!-- State -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">State : </div>
+                </div>
+                <input class="form-control" type="text" formControlName="state">
+            </div>
+
+            <!-- Zip Code -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text" id="btnGroupAddon">Zip Code : </div>
+                </div>
+                <input class="form-control" type="text" formControlName="zipcode">
+            </div>
+            <br>
+            <button type="submit" [disabled]="!reactive.valid">Submit</button>
+            <button type="submit" (click)="addInfo()">Submit</button>
+        </div>
+    </div>
+
+</form>

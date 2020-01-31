@@ -1,0 +1,90 @@
+<div class="panel">
+    <form (ngSubmit)="onSubmit()" #sampleForm="ngForm">
+        <div *ngIf="!show" class="card">
+            <div class="card-body">
+                <div class="card-title text-center" style="font-family: monospace ">
+                    <h5>Template Driven</h5>
+                </div>
+                <hr>
+                <!-- Name -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="btnGroupAddon">Name : </div>
+                    </div>
+                    <input class="form-control" type="text" name="fname" [(ngModel)]="fname" required minlength="4" #name="ngModel">
+                </div>
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                    <div *ngIf="name.errors.required">
+                        <i>Name is required!</i>
+                    </div>
+                    <div *ngIf="name.errors.minlength">
+                        <i>Name must be atleast 4 characters!</i>
+                    </div>
+                </div>
+                <div *ngIf="name.valid" class="alert alert-success">
+                    Name is valid!
+                </div>
+                <br>
+                <!-- Email -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="btnGroupAddon">Email : </div>
+                    </div>
+                    <input class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" name="email" type="email" [(ngModel)]="emailAdd" required minlength="4" #emailadd="ngModel">
+                </div>
+
+                <div *ngIf="emailadd.invalid && (emailadd.dirty || emailadd.touched)" class="alert alert-danger">
+                    <div *ngIf="emailadd.errors.required">
+                        <i>Email is required!</i>
+                    </div>
+                    <div *ngIf="emailadd.errors.pattern">
+                        <i>Invalid email</i>
+                    </div>
+                </div>
+                <div *ngIf="emailadd.valid" class="alert alert-success">
+                    Email is valid!
+                </div>
+                <br>
+                <!-- Gender -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="btnGroupAddon">Gender : </div>
+                    </div>
+                    <select class="form-control" [(ngModel)]="genderc" name="option" #option="ngModel" required>
+                    <option value=""></option>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+                </div>
+
+                <div *ngIf="option.invalid && (option.dirty || option.touched)" class="alert alert-danger">
+                    <div *ngIf="option.errors.required">
+                        <i>Please choose a gender</i>
+                    </div>
+                </div>
+                <div *ngIf="option.valid" class="alert alert-success">
+                    Gender is valid!
+                </div>
+                <br>
+                <button [disabled]="!sampleForm.form.valid" (click)="onShow()">Submit</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <div *ngIf="show" class="card">
+        <div class="card-body">
+            <div class="card-title text-center" style="font-family: monospace ">
+                <h5>You have submitted the following</h5>
+            </div>
+            <hr>
+            <p>name : {{fname}}</p>
+            <p>Email : {{emailAdd}}</p>
+            <p>Gender : {{genderc}}</p>
+            <br>
+            <button (click)="edit()">Edit</button>
+        </div>
+    </div>
+</div>

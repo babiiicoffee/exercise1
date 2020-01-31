@@ -1,0 +1,47 @@
+.event {
+    background-color: brown;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+.title {
+    text-align: center;
+}
+
+
+/* if class is active */
+
+.active {
+    background-color: lawngreen;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+
+/* if class is not active */
+
+
+/* DEFAULT */
+
+button {
+    background-color: red;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+.style {
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+.dis {
+    background-color: lightslategray;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+.not {
+    background-color: antiquewhite;
+    font-family: fantasy;
+    font-size: 25px;
+}

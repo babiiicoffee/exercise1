@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 20rem;margin: 5%;">
+            <div class="card-body">
+                <div class="card-title h3">Child Component</div>
+            </div>
+            <hr>
+            <div id="childComponent">
+                <label for="fulln">Full Name : {{fullname}}</label> <br>
+                <label for="enro">Enrolled : {{enroll}}</label> <br>
+                <label for="gend">Gender : {{gender}}</label> <br>
+
+                <button class="btn btn-success" (click)="onApprove()">Approve</button>
+                <button class="btn btn-danger" (click)="onDecline()">Decline</button>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- APPROVED -->
+    <div class="col">
+        <div class="card" style="width: 20rem;margin: 5%;">
+            <div class="card-body">
+                <div class="card-title h3">Approved</div>
+            </div>
+            <hr>
+            <div>
+                <ul>
+                    <li *ngFor="let info of approvedInformation">
+                        Name : {{info.name}} <br> Status : {{info.status}}<br> Gender : {{info.gender}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

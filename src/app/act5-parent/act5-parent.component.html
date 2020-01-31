@@ -1,0 +1,87 @@
+<div>
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 20rem;margin: 5%;">
+                <div class="card-body">
+                    <div class="card-title h3">Parent Component</div>
+
+                    <hr>
+                    <div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="btnGroupAddon">Full Name : </div>
+                            </div>
+                            <input type="text" [(ngModel)]="fname" class="form-control">
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="btnGroupAddon">Enrolled : </div>
+                            </div>
+                            <div class="input-group-text">
+                                <input type="checkbox" [(ngModel)]="enroll">
+                            </div>
+
+
+                            <!-- <input type="checkbox" [(ngModel)]="enroll" class="form-control"> -->
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="btnGroupAddon">Gender : </div>
+                            </div>
+                            <select class="form-control" [(ngModel)]="genderChoice">
+                            <option ng-selected="selected"></option>
+                            <option >Female</option>
+                            <option>Male</option>    
+                      </select> <br></div>
+                        <br>
+                        <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DECLINED -->
+        <div class="col">
+            <div class="card" style="width: 20rem;margin: 5%;">
+                <div class="card-body">
+                    <div class="card-title h3">Declined</div>
+                </div>
+                <hr>
+                <div>
+                    <ul>
+                        <li *ngFor="let info of declinedInformation[0]">
+                            <!--declinedInfo declinedInfo=$event-->
+                            Name : {{info.name}} <br> Gender : {{info.gender}} <br> Status : {{info.status}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTIFICATION -->
+        <div class="col">
+            <div *ngIf="notif" class="card" style="width: 20rem;margin: 5%;">
+                <div class="card-body">
+                    <div class="card-title h3">Notification</div>
+
+                    <hr>
+                    <div>
+                        <p>Document Status : {{notif}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- CHILD COMPONENT -->
+    <div class="row">
+        <app-act5-child (addNotification)="notif=$event" (declineEvent)="declinedInfo($event)" [fullname]="fn" [enroll]="en" [gender]="genderC">
+        </app-act5-child>
+    </div>
+
+</div>

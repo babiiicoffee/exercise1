@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Add Person's Informations</h3>
+                </div>
+                <div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Fullname</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Fullname" aria-label="Fullname" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Fullname" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Contact</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Contact" aria-label="Fullname" aria-describedby="basic-addon1">
+                    </div>
+                    <button>add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Data</h3>
+                </div>
+                <div>
+                    <div>
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Fullname</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone number</th>
+                                    <!-- <th scope="col">Password</th> -->
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- <tr *ngFor="let info of informations; let i = index;">
+                            <td>{{i + 1}}</td> -->
+                                <tr *ngFor="let data of apiDataList">
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.name}}</td>
+                                    <td>{{data.email}}</td>
+                                    <td>{{data.phone}}</td>
+                                    <td><button>edit</button></td>
+                                </tr>
+                                <!-- <td><button (click)="onEdit(info)" class="btn btn-default">Edit</button></td>
+                        </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

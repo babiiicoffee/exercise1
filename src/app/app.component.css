@@ -1,0 +1,31 @@
+/* @media (max-width: 740px) {
+    html,
+    body,
+    header,
+    .view {
+        height: 1000px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+    html,
+    body,
+    header,
+    .view {
+        height: 650px;
+    }
+}
+
+body {
+    background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg');
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+html,
+body,
+header,
+.view {
+    height: 100%;
+} */

@@ -1,0 +1,89 @@
+<div *ngIf="fillUp">
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmitData()">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Reactive Form</h3>
+                </div>
+                <hr>
+                <h5>Name :</h5>
+                <!-- First Name -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="btnGroupAddon">First Name : </div>
+                    </div>
+                    <input class="form-control" type="text" formControlName="firstname">
+                </div>
+                <br>
+                <!-- Last Name -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="btnGroupAddon">Last Name : </div>
+                    </div>
+                    <input class="form-control" type="text" formControlName="lastname">
+                </div>
+                <br>
+                <!-- Email -->
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="btnGroupAddon">Email : </div>
+                    </div>
+                    <input class="form-control" type="email" name="email" email="true" formControlName="email">
+                </div>
+                <br>
+                <div formGroupName="address">
+                    <h5>Address : </h5>
+                    <!-- Street -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Street : </div>
+                        </div>
+                        <input class="form-control" type="text" formControlName="street">
+                    </div>
+                    <br>
+                    <!-- City -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">City : </div>
+                        </div>
+                        <input class="form-control" type="text" formControlName="city">
+                    </div>
+                    <br>
+                    <!-- State -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">State : </div>
+                        </div>
+                        <input class="form-control" type="text" formControlName="state">
+                    </div>
+                    <br>
+                    <!-- Zip Code -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">Zip Code : </div>
+                        </div>
+                        <input class="form-control" type="text" formControlName="zipcode">
+                    </div>
+                    <br>
+                    <button type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+                </div>
+            </div>
+        </div>
+        <br>
+    </form>
+</div>
+
+<div *ngIf="edit">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-title">
+                <h3>You have submitted this informations</h3>
+            </div>
+            <hr>
+            <div>
+                {{reactiveForm.value | json}}
+            </div>
+        </div>
+    </div>
+    <!-- <h3>Form Value: {{reactiveForm.value | json}}</h3> -->
+</div>
